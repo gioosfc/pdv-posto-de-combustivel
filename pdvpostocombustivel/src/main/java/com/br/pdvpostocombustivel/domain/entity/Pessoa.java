@@ -1,13 +1,32 @@
 package com.br.pdvpostocombustivel.domain.entity;
 
+import jakarta.persistence.*;
+import jakarta.websocket.OnMessage;
+import org.springframework.cglib.core.Local;
+
+import java.time.LocalDate;
 import java.util.Date;
+
+@Entity
+@Table(name = "pessoa")
 
 public class Pessoa{
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     // atributos
+    @Column(length = 200, nullable = false)
     private String nomeCompleto;
+
+    @Column(length = 14, nullable = false)
     private String cpfCnpj;
-    private Date dataNascimento;
+
+    @Column(length = 10, nullable = false)
+    private LocalDate dataNascimento;
+
+    @Column(length = 12, nullable = false)
     private Long numeroCtps;
 
     // construtor
@@ -44,7 +63,7 @@ public class Pessoa{
     }
 
     //getters
-    public Date getDataNascimento() {
+    public LocalDate getDataNascimento() {
         return dataNascimento;
     }
 
