@@ -1,10 +1,26 @@
 package com.br.pdvpostocombustivel.domain.entity;
 
+import jakarta.persistence.*;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+@Entity
+@Table(name = "contato")
+
 public class Contato{
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+
     //atributos
+
+    @Column(length = 13, nullable = false)
     private String telefone;
+
+    @Column(length = 45, nullable = false)
     private String email;
+
+    @Column(length = 200, nullable = false)
     private String endereco;
 
     //construtor
@@ -12,6 +28,10 @@ public class Contato{
         this.telefone = telefone;
         this.email = email;
         this.endereco = endereco;
+    }
+
+    public Contato() {
+
     }
 
     //getters

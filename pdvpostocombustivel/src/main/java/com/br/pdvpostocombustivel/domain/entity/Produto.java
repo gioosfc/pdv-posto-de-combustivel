@@ -16,6 +16,10 @@ public class Produto{
         this.marca = marca;
     }
 
+    public Produto() {
+
+    }
+
     public String getNome() {
         return nome;
     }

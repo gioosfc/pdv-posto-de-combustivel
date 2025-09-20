@@ -19,11 +19,15 @@ public class Estoque{
         this.dataValidade = dataValidade;
     }
 
+    public Estoque() {
+
+    }
+
     public BigDecimal getQuantidade() {
         return quantidade;
     }
 
-    public void setQuantidade(BigDecimal quantidade) {
+    public void setQuantidade(String quantidade) {
         this.quantidade = quantidade;
     }
 
@@ -55,7 +59,7 @@ public class Estoque{
         return dataValidade;
     }
 
-    public void setDataValidade(Date dataValidade) {
+    public void setDataValidade(String dataValidade) {
         this.dataValidade = dataValidade;
     }
 }

@@ -18,6 +18,10 @@ public class Custo{
         this.dataProcessamento = dataProcessamento;
     }
 
+    public Custo() {
+
+    }
+
     public double getImposto() {
         return imposto;
     }
@@ -30,7 +34,7 @@ public class Custo{
         return custoVariavel;
     }
 
-    public void setCustoVariavel(double custoVariavel) {
+    public void setCustoVariavel(String custoVariavel) {
         this.custoVariavel = custoVariavel;
     }
 
@@ -54,7 +58,7 @@ public class Custo{
         return dataProcessamento;
     }
 
-    public void setDataProcessamento(Date dataProcessamento) {
+    public void setDataProcessamento(String dataProcessamento) {
         this.dataProcessamento = dataProcessamento;
     }
 }

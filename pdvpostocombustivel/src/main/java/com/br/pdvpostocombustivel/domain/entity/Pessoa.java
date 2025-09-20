@@ -1,11 +1,8 @@
 package com.br.pdvpostocombustivel.domain.entity;
 
 import jakarta.persistence.*;
-import jakarta.websocket.OnMessage;
-import org.springframework.cglib.core.Local;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 @Entity
 @Table(name = "pessoa")
@@ -30,7 +27,7 @@ public class Pessoa{
     private Long numeroCtps;
 
     // construtor
-    public Pessoa(String nomeCompleto, String cpfCnpj, Date dataNascimento, Long numeroCtps) {
+    public Pessoa(String nomeCompleto, String cpfCnpj, LocalDate dataNascimento, Long numeroCtps) {
         this.nomeCompleto = nomeCompleto;
         this.cpfCnpj = cpfCnpj;
         this.dataNascimento = dataNascimento;
@@ -68,7 +65,7 @@ public class Pessoa{
     }
 
     //setters
-    public void setDataNascimento(Date dataNascimento) {
+    public void setDataNascimento(LocalDate dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 

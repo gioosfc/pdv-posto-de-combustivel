@@ -15,11 +15,15 @@ public class Preco {
         this.horaAlteracao = horaAlteracao;
     }
 
+    public Preco() {
+        
+    }
+
     public BigDecimal getValor() {
         return valor;
     }
 
-    public void setValor(BigDecimal valor) {
+    public void setValor(String valor) {
         this.valor = valor;
     }
 
@@ -27,7 +31,7 @@ public class Preco {
         return dataAlteracao;
     }
 
-    public void setDataAlteracao(Date dataAlteracao) {
+    public void setDataAlteracao(String dataAlteracao) {
         this.dataAlteracao = dataAlteracao;
     }
 
@@ -37,5 +41,9 @@ public class Preco {
 
     public void setHoraAlteracao(Date horaAlteracao) {
         this.horaAlteracao = horaAlteracao;
+    }
+
+    public void setHoraAlteracao(String time) {
+
     }
 }
