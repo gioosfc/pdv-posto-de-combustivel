@@ -1,5 +1,6 @@
 package com.br.pdvpostocombustivel.domain.entity;
 
+import com.br.pdvpostocombustivel.domain.enums.TipoPessoa;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -14,17 +15,21 @@ public class Pessoa{
     private Long id;
 
     // atributos
-    @Column(length = 200, nullable = false)
+    @Column(name = "nome_completo", length = 200, nullable = false)
     private String nomeCompleto;
 
-    @Column(length = 14, nullable = false)
+    @Column(name = "cpf_cnpj", length = 14, nullable = false)
     private String cpfCnpj;
 
-    @Column(length = 10, nullable = false)
+    @Column(name = "data_nascimento", length = 10, nullable = false)
     private LocalDate dataNascimento;
 
-    @Column(length = 12, nullable = false)
+    @Column(name = "numero_ctps", length = 12, nullable = false)
     private Long numeroCtps;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "tipo_pessoa", length = 15, nullable = false)
+    private TipoPessoa tipoPessoa;
 
     // construtor
     public Pessoa(String nomeCompleto, String cpfCnpj, LocalDate dataNascimento, Long numeroCtps) {
@@ -32,6 +37,7 @@ public class Pessoa{
         this.cpfCnpj = cpfCnpj;
         this.dataNascimento = dataNascimento;
         this.numeroCtps = numeroCtps;
+        this.tipoPessoa = tipoPessoa;
     }
 
     public Pessoa() {
